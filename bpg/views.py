@@ -123,6 +123,8 @@ def get_user_name(request):
             if "mail" in graph_response:
                 user_details.userName = user_details.userName + " (" + graph_response["mail"] + ")"
         # Generate a list of user-claims user has access to
+        print("auth_response",auth_response)
+        print("before_user_ileAccessList",user_details.ileAccessList)
         user_details.ileAccessList=get_access_list (auth_response['user_claims'])
 
         # Generate Login URL
