@@ -116,7 +116,6 @@ def get_user_name(request):
         
         # Call Graph API with the access token
         graph_response = call_graph (access_token)
-        
         # Generate UserName to be shown in page
         if "givenName" in graph_response:
             user_details.userName=graph_response["givenName"]
